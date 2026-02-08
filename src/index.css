@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-valentine-bg text-valentine-purple;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Smooth scaling on hover for better mobile experience */
+  .hover-scale-102 {
+    transition: transform 0.3s ease;
+  }
+  
+  .hover-scale-102:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Better image rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  
+  /* Smooth transitions for all interactive elements */
+  button, a, input, textarea {
+    transition: all 0.3s ease;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(91, 77, 157, 0.05);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 122, 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 122, 0.5);
+  }
+}
+
+/* Print styles for better PDF export */
+@media print {
+  body {
+    background: white;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}
