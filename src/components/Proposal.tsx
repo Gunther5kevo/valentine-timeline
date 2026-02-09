@@ -10,7 +10,7 @@ export default function Proposal({ isVisible, onContinue, onBeginAgain }: Propos
   const [showCelebration, setShowCelebration] = useState(false);
   const [heartsCreated, setHeartsCreated] = useState(false);
 
-  const handleYes = () => {
+  const handleContinue = () => {
     setShowCelebration(true);
     
     // Create gentle rising hearts
@@ -48,24 +48,28 @@ export default function Proposal({ isVisible, onContinue, onBeginAgain }: Propos
             <span className="animate-heartbeat" style={{ animationDelay: '0.4s' }}>❤️</span>
           </div>
 
-          {/* The Valentine Question */}
+          {/* The Dedication */}
           <div className="space-y-4 sm:space-y-6 md:space-y-8 px-4">
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-valentine-purple/70 leading-relaxed">
-              All these moments led us here...
+              Every moment, every memory...
             </p>
             
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-valentine-purple leading-tight">
-              Will you be my Valentine?
+              This story was created for you
             </h2>
+
+            <p className="text-base sm:text-lg md:text-xl text-valentine-purple/60 leading-relaxed pt-4">
+              Now it's time to save and share these memories ✨
+            </p>
           </div>
 
-          {/* Answer buttons */}
+          {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pt-4 sm:pt-8">
             <button
-              onClick={handleYes}
+              onClick={handleContinue}
               className="w-full sm:w-auto px-12 sm:px-14 md:px-16 py-4 sm:py-5 bg-valentine-coral hover:bg-valentine-coral/90 text-white text-xl sm:text-2xl font-light rounded-full transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
             >
-              Yes! ❤️
+              Save & Share ❤️
             </button>
 
             <button
@@ -82,10 +86,10 @@ export default function Proposal({ isVisible, onContinue, onBeginAgain }: Propos
       {showCelebration && (
         <div className="fixed inset-0 bg-gradient-to-b from-valentine-coral/90 via-valentine-pink/80 to-valentine-light/90 backdrop-blur-sm z-50 flex items-center justify-center animate-gentle-glow">
           <div className="text-center space-y-6 sm:space-y-8 px-4 sm:px-6">
-            <div className="text-5xl sm:text-6xl mb-6 sm:mb-8 animate-gentle-pulse">❤️</div>
+            <div className="text-5xl sm:text-6xl mb-6 sm:mb-8 animate-gentle-pulse">💝</div>
             
             <p className="text-3xl sm:text-4xl md:text-5xl font-light text-white leading-relaxed">
-              You've made me the happiest! ✨
+              Let's preserve these memories
             </p>
 
             <p className="text-white/70 text-base sm:text-lg italic pt-6 sm:pt-8">
